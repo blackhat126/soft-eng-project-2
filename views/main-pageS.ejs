@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">    
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="main-page.css" rel="stylesheet">
+    <style>
+        .button-1 {
+            background-color: gray;
+            transition: none;
+        }
+
+        .button-1:hover {
+            background-color: gray; 
+            transform: scale(1);
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="background-overlay"></div>
+    <img id="background" src="cool blue background.svg"> 
+    <div class="search-box">Search Bar</div>
+    <div class="app-name-box">Product Name</div>
+    <a href="/login"><button class="button logout-button">Log out</button></a>
+    <div id="menu-box">
+        <div id="menu-list-box" class="dropdown">
+            <button class="btn btn-primary dropdown-toggle btn-lg menu-button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fas fa-bars"></i></button>  
+            <ul id="menu-list" class="dropdown-menu">
+                <% let today = new Date(2021, 4, 15); %> 
+                    <% if (menuItems.length > 0) { %>
+                        <% menuItems.forEach((item) => { %>
+                            <% if ((item.expDate.getFullYear() == today.getFullYear()) && (item.expDate.getMonth() == today.getMonth()) && (item.expDate.getDate() == today.getDate())) { %> 
+                                    <li>
+                                        <pre><i class="fas fa-exclamation-triangle icon"><div class="icon-box"></div></i><a style="color: black; cursor: pointer;"><b><%= item.productName %></b> <%= '(' + item.brandName + ')' %></a></br><button class="edit item-buttons" type="button">Edit</button> <button class="delete item-buttons" type="button" data-doc="<%= item._id %>">Delete</button></pre>                                                            
+                                    </li> 
+                            <% } else { %> 
+                                <li>
+                                    <pre><a style="color: black; cursor: pointer;"><b><%= item.productName %></b> <%= '(' + item.brandName + ')' %></a></br><button class="edit item-buttons" type="button">Edit</button> <button class="delete item-buttons" type="button" data-doc="<%= item._id %>">Delete</button></pre>                                                            
+                                </li> 
+                            <% } %> 
+                        <% }); %>     
+                    <% } %>
+            </ul> 
+        </div>
+    </div>
+    <div class="form-box">
+        <form class="form" action="/" method="POST">
+            <h3>Enter Items Below</h3>
+            <div class="line-1 line-break"></div>
+                <div>
+                    <label class="form-headers">Product Name</label>
+                    <input class="form-inputs" name="productName" type="text" value="Goulash" placeholder="ex... &quot;Gouda Cheese&quot;" autocomplete="off" required>
+            
+                    <label class="form-headers">Brand Name</label>
+                    <input class="form-inputs" name="brandName" type="text" value="Podravka" placeholder="ex... &quot;Paladin&quot;" autocomplete="off" required>
+
+                    <label class="form-headers">Expiration Date</label>
+                    <input class="form-inputs" name="expDate" type="date" value="2023-11-14" autocomplete="off" required>
+
+                    <label class="form-headers">Location</label>
+                    <textarea class="form-location form-inputs" name="location" type="text" required>In the "cans/seasonings" isle, on the left side, on the 3rd shelf, towards the middle.</textarea>
+                </div>
+            <div class="line-2 line-break"></div>
+            <button class="button button-1" type="submit" disabled>Save</button> 
+        </form>
+    </div>
+    <% let expDate; %> 
+    <% let itemExpDate; %> 
+    <% if (menuItems.length > 0) { %> 
+        <% menuItems.forEach((item) => { %> 
+            <% expDate = new Date(item.expDate.getFullYear(), item.expDate.getMonth(), (item.expDate.getDate()+1)); %>
+            <% itemExpDate = expDate.toISOString().slice(0, 10); %>
+                <form class="form popup-form" hidden>
+                    <h3>View Items Below</h3>
+                    <div class="line-1 line-break popup-line-1"></div>
+                        <div>
+                            <label class="form-headers popup-headers">Product</label>
+                            <input class="form-inputs popup-inputs" name="productName" type="text" value="<%= item.productName %>" placeholder="ex... &quot;Gouda Cheese&quot;" autocomplete="off" disabled>
+                    
+                            <label class="form-headers popup-headers">Brand Name</label>
+                            <input class="form-inputs popup-inputs" name="brandName" type="text" value="<%= item.brandName %>" placeholder="ex... &quot;Paladin&quot;" autocomplete="off" disabled>
+                
+                            <label class="form-headers popup-headers">Expiration Date</label>
+                            <input class="form-inputs popup-inputs" name="expDate" type="date" value="<%= itemExpDate %>" autocomplete="off" disabled>
+                
+                            <label class="form-headers popup-headers">Location</label>
+                            <textarea class="form-location form-inputs popup-inputs" name="location" type="text" disabled><%= item.location %></textarea>
+                        </div>
+                    <div class="line-2 line-break popup-line-2"></div>
+                    <button class="button close-button" type="button">Close</button>
+                    <span id="blank" hidden>blank</span> 
+                </form>
+        <% }); %> 
+    <% } %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/158e82d513.js" crossorigin="anonymous"></script>
+    <script src="main-page.js"></script>
+</body>
+</html>
+
+
