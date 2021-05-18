@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">    
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
     <link href="main-page.css" rel="stylesheet">
     <style>
         .button-1 {
@@ -22,14 +23,14 @@
 <body>
     <div id="background-overlay"></div>
     <img id="background" src="cool blue background.svg"> 
-    <div class="search-box">Search Bar</div>
-    <div class="app-name-box">Product Name</div>
+    <div class="app-name-box"><div>Hypermarket Food Alert App</div></div>
     <a href="/login"><button class="button logout-button">Log out</button></a>
     <div id="menu-box">
         <div id="menu-list-box" class="dropdown">
+            <span class="search-icon"><i class="fas fa-search"></i></span><input id="search-bar" class="search-box form-inputs" data-toggle="dropdown" placeholder="Search..." onkeyup="filterFunction()">
             <button class="btn btn-primary dropdown-toggle btn-lg menu-button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fas fa-bars"></i></button>  
             <ul id="menu-list" class="dropdown-menu">
-                <% let today = new Date(2021, 4, 15); %> 
+                <% let today = new Date(2021, 4, 17); %> 
                     <% if (menuItems.length > 0) { %>
                         <% menuItems.forEach((item) => { %>
                             <% if ((item.expDate.getFullYear() == today.getFullYear()) && (item.expDate.getMonth() == today.getMonth()) && (item.expDate.getDate() == today.getDate())) { %> 
@@ -52,16 +53,16 @@
             <div class="line-1 line-break"></div>
                 <div>
                     <label class="form-headers">Product Name</label>
-                    <input class="form-inputs" name="productName" type="text" value="Goulash" placeholder="ex... &quot;Gouda Cheese&quot;" autocomplete="off" required>
+                    <input class="form-inputs" name="productName" type="text" placeholder="ex... &quot;Gouda Cheese&quot;" autocomplete="off" required>
             
                     <label class="form-headers">Brand Name</label>
-                    <input class="form-inputs" name="brandName" type="text" value="Podravka" placeholder="ex... &quot;Paladin&quot;" autocomplete="off" required>
+                    <input class="form-inputs" name="brandName" type="text" placeholder="ex... &quot;Paladin&quot;" autocomplete="off" required>
 
                     <label class="form-headers">Expiration Date</label>
-                    <input class="form-inputs" name="expDate" type="date" value="2023-11-14" autocomplete="off" required>
+                    <input class="form-inputs" name="expDate" type="date" autocomplete="off" required>
 
                     <label class="form-headers">Location</label>
-                    <textarea class="form-location form-inputs" name="location" type="text" required>In the "cans/seasonings" isle, on the left side, on the 3rd shelf, towards the middle.</textarea>
+                    <textarea class="form-location form-inputs" name="location" type="text" required></textarea>
                 </div>
             <div class="line-2 line-break"></div>
             <button class="button button-1" type="submit" disabled>Save</button>

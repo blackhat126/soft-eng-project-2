@@ -53,16 +53,17 @@
 }
 
 .social-icons {
-    margin: 30px auto;
+    margin: 30px;
     text-align: center;
 }
 
 .social-icons img {
     width: 30px;
-    margin: 0 12px;
+    margin: 12px;
     box-shadow: 0 0 20px 0 #7F7F7F3d;
     cursor: pointer;
     border-radius: 50%;
+    background: linear-gradient(to right, #FF105F, #FFAD06);
 }
 
 .input-group {

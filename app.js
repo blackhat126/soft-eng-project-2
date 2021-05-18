@@ -37,6 +37,10 @@ app.get('/', (req, res) => {
     }
 });
 
+app.get('/login', (req, res) => {
+    res.render('login-page');
+});
+
 app.post('/', (req, res) => {
     if (req.body.password == 'Entry') {
         password = 'Entry';
@@ -72,6 +76,7 @@ app.post('/', (req, res) => {
     }
 
     else {
+        console.log(req.body);
         let item = new Item(req.body);
 
         item.save()
@@ -86,10 +91,11 @@ app.post('/', (req, res) => {
 
 app.put('/:id', (req, res) => {
     let id = req.params.id;
+    console.log(req.body);
     
     Item.findByIdAndUpdate(id, req.body)
     .then((result) => {
-         res.json({redirect: '/'});
+        res.json({redirect: '/'});
     })
     .catch((err) => {
          console.log(err);
@@ -106,10 +112,6 @@ app.delete('/:id', (req, res) => {
     .catch((err) => {
         console.log(err);
     });
-});
-
-app.get('/login', (req, res) => {
-    res.render('login-page');
 });
 
 
