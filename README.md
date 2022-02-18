@@ -1,2 +1,2 @@
-# soft-eng-project-2
-MAKE SURE to have node.js installed, then run the command npm install in the command prompt in the main directory to get all packages installed into the project.  
+# Supermarket Food Alert App
+This repository contains a food expiration date alert application that allows employees within a supermarket to keep track of individual food items that have expired   
