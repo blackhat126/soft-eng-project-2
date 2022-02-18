@@ -33,7 +33,7 @@ function filterFunction() {
     b = div.getElementsByTagName("b");
     li = div.getElementsByTagName('li');
     for (i = 0; i < b.length; i++) {
-        txtValue = b[i].textContent || b[i].innerText;
+        txtValue = b[i].textContentP || b[i].innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             li[i].style.display = "";
         } else {
@@ -83,7 +83,7 @@ for (let i = 0; i < forms.length; i++) {
         let urlEncodedData = "",
         urlEncodedDataPairs = [],
         name;
-        for( name in formData ) {
+        for(name in formData) {
             urlEncodedDataPairs.push( encodeURIComponent( name ) + '=' + encodeURIComponent( formData[name] ) );
         }
         urlEncodedData = urlEncodedDataPairs.join( '&' ).replace( /%20/g, '+' );
