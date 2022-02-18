@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const Item = require('./models/item.js');
 
-const dbURI = 'mongodb+srv://blackhat:backup123@soft-eng-cluster.3zgig.mongodb.net/soft-eng-database?retryWrites=true&w=majority';
+const dbURI = 'mongodb+srv://blackhat:backup123hello@soft-eng-cluster.3zgig.mongodb.net/soft-eng-database?retryWrites=true&w=majority';
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTechnology: true})
    .then((result) => console.log('connected to db'))
    .catch((err) => console.log(err));
