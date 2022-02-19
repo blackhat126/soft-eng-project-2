@@ -2,7 +2,7 @@
 # Supermarket Food Alert App
 A food expiration date alert application that gives employees within a supermarket the ability to keep track of individual food items that have expired allowing them to remove the food products off the shelves accordingly.
 
-There are three employee levels whereby each one has a certain level of access to features.
+There are three employee levels where each one has a certain level of access to features.
 
 Entry level can only view the current products, but cannot add, edit, or delete products.
 Supervisor level can view, edit, delete, but cannot add products.
@@ -28,7 +28,7 @@ npm install
 node app
 ```
 ## How To Use
-    1. Type "localhost:3000/login" into your browser's address bar .
+    1. Type "localhost:3000/login" into your browser's address bar.
     2. Select entry, supervisor, or manager in the login page.
     3. Enter any random username.
     4. Enter the password "Entry", "Supervisor", or "Manager" depending on which employee level you selected.
