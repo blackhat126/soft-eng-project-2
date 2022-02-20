@@ -4,9 +4,9 @@ A food expiration date alert application that gives employees within a supermark
 
 There are three employee levels where each one has a certain level of access to features.
 
-Entry level can only view the current products, but cannot add, edit, or delete products.
-Supervisor level can view, edit, delete, but cannot add products.
-Manager level has full access allowing them to view, add, edit, and delete products. 
+- Entry level can only view the current products, but cannot add, edit, or delete products.
+- Supervisor level can view, edit, delete, but cannot add products.
+- Manager level has full access allowing them to view, add, edit, and delete products. 
 
 
 
