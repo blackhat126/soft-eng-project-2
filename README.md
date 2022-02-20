@@ -2,10 +2,10 @@
 # Supermarket Food Alert App
 A food expiration date alert application that gives employees within a supermarket the ability to keep track of individual food items that have expired allowing them to remove the food products off the shelves accordingly.
 
-There are three employee levels where each one has a certain level of access to features.
+There are three employee levels each one having a certain level of access to specific features.
 
 - Entry level can only view the current products, but cannot add, edit, or delete products.
-- Supervisor level can view, edit, delete, but cannot add products.
+- Supervisor level can view, edit, delete, but cannot add new products.
 - Manager level has full access allowing them to view, add, edit, and delete products. 
 
 
