@@ -1,6 +1,6 @@
 
 # Supermarket Food Alert App
-A food expiration date alert application that gives employees in a supermarket the ability to keep track of individual food items that have expired allowing them to remove the food products off the shelves accordingly.
+A food expiration date alert application that gives employees in a supermarket the ability to keep track of individual food items that have expired allowing them to remove the products off the shelves accordingly.
 
 There are three employee levels where each one has a certain level of access to specific features.
 
