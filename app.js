@@ -3,7 +3,8 @@ const app = express();
 const mongoose = require('mongoose');
 const Item = require('./models/item.js');
 
-const dbURI = 'mongodb+srv://blackhat:backup123hello@soft-eng-cluster.3zgig.mongodb.net/soft-eng-database?retryWrites=true&w=majority';
+//MongoDB connection string goes here
+const dbURI = 'mongodb+srv://blackhat:backup123hello@alert-app-cluster.3zgig.mongodb.net/alert-app-database?retryWrites=true&w=majority';
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTechnology: true})
    .then((result) => console.log('connected to db'))
    .catch((err) => console.log(err));
@@ -38,6 +39,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
+    password = '';
     res.render('login-page');
 });
 
@@ -73,6 +75,10 @@ app.post('/', (req, res) => {
         .catch((err) => {
             console.log(err);
         });
+    }
+
+    else if ((password != 'Entry') && (password != 'Supervisor') && (password != 'Manager')) {
+        res.render('login-page');
     }
 
     else {

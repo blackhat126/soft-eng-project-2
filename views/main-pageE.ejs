@@ -30,10 +30,10 @@
             <span class="search-icon"><i class="fas fa-search"></i></span><input id="search-bar" class="search-box form-inputs" data-toggle="dropdown" placeholder="Search..." onkeyup="filterFunction()">
             <button class="btn btn-primary dropdown-toggle btn-lg menu-button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fas fa-bars"></i></button>  
             <ul id="menu-list" class="dropdown-menu">
-                <% let today = new Date(2021, 4, 17); %> 
+                <% let today = new Date(); %> 
                     <% if (menuItems.length > 0) { %>
                         <% menuItems.forEach((item) => { %>
-                            <% if ((item.expDate.getFullYear() == today.getFullYear()) && (item.expDate.getMonth() == today.getMonth()) && (item.expDate.getDate() == today.getDate())) { %> 
+                            <% if ((item.expDate.getFullYear() <= today.getFullYear()) && (item.expDate.getMonth() <= today.getMonth()) && (item.expDate.getDate() <= today.getDate())) { %> 
                                     <li>
                                         <pre><i class="fas fa-exclamation-triangle icon"><div class="icon-box"></div></i><a style="color: black; cursor: pointer;"><b><%= item.productName %></b> <%= '(' + item.brandName + ')' %></a></br><button class="edit item-buttons" type="button" disabled>Edit</button> <button class="delete item-buttons" type="button" data-doc="<%= item._id %>" disabled>Delete</button></pre>                                                            
                                     </li> 
