@@ -8,13 +8,6 @@ There are three employee levels where each one has a certain level of access to 
 - Supervisor level can view, edit, delete, but cannot add new products.
 - Manager level has full access allowing them to view, add, edit, and delete products. 
 
-## Features
-- Food item retrieval, addition, altering, and deletion
-- Dropdown menu listing all current food items
-- Heirarchical user login
-- Warning labels 
-- Individual food item search
-
 ## Tech Stack
 - EJS view engine
 - Node.js and Express
