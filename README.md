@@ -21,7 +21,7 @@ There are three employee levels where each one has a certain level of access to 
 - MongoDB
 
 ## How To Run
-1. Create a MongoDB cluster and a database (collection) for it.
+1. Create a MongoDB cluster and a database (collection) for it and set the collection name to be "item".
 2. Add your database connection string into the "const dbURI" variable in the "app.js" file. 
 3. `npm install`  
 4. `node app`   
