@@ -9,7 +9,7 @@ mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTechnology: true})
    .then((result) => console.log('connected to db'))
    .catch((err) => console.log(err));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT);
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
