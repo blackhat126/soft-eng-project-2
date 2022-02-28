@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
     }
 });
 
-app.get('/login', (req, res) => {
+app.get('/', (req, res) => {
     password = '';
     res.render('login-page');
 });
