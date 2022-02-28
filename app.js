@@ -17,6 +17,11 @@ app.use(express.urlencoded({extended: true}));
 
 let password;
 
+app.get('/login', (req, res) => {
+    password = '';
+    res.render('login-page');
+});
+
 app.get('/', (req, res) => {
     if (password == 'Supervisor') {
         Item.find()
@@ -37,11 +42,6 @@ app.get('/', (req, res) => {
             console.log(err);
         });
     }
-});
-
-app.get('/', (req, res) => {
-    password = '';
-    res.render('login-page');
 });
 
 app.post('/', (req, res) => {
@@ -83,7 +83,7 @@ app.post('/', (req, res) => {
     }
 
     else {
-        console.log(req.body);
+        //console.log(req.body);
         let item = new Item(req.body);
 
         item.save()
