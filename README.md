@@ -12,7 +12,7 @@ Click here for the live [demo](https://super-314528.oa.r.appspot.com/)
 
 ## Tech Stack
 - EJS view engine
-- Node.js and Express
+- Express.js
 - MongoDB
 
 ## How To Use Locally
