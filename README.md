@@ -15,7 +15,7 @@ Click here for the live [demo](https://super-314528.oa.r.appspot.com/)
 - Node.js and Express
 - MongoDB
 
-## How To Use
+## How To Use Locally
 1. Create a MongoDB cluster and collection then set the collection name to "items".
 2. Add your database connection string into the "const dbURI" variable in the "app.js" file. 
 3. `npm install`  
