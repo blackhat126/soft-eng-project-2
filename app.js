@@ -9,6 +9,7 @@ mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTechnology: true})
    .then((result) => console.log('connected to db'))
    .catch((err) => console.log(err));
 
+//Port configuration for Google Cloud Platform's App Engine service
 const PORT = process.env.PORT || 8080;
 app.listen(PORT);
 app.set('view engine', 'ejs');
@@ -83,7 +84,6 @@ app.post('/', (req, res) => {
     }
 
     else {
-        //console.log(req.body);
         let item = new Item(req.body);
 
         item.save()

@@ -3,6 +3,8 @@ let editButtons = document.getElementsByClassName('edit');
 let popupForms = document.getElementsByClassName('popup-form');
 let closeButtons = document.getElementsByClassName('close-button'); 
 let previous = document.getElementById('blank');
+
+//Hides all item popup forms until an individual item name is clicked
 for (let i = 0; i < closeButtons.length; i++) {
     itemButtons[i].onclick = () => {
         previous.hidden = true;
@@ -11,6 +13,7 @@ for (let i = 0; i < closeButtons.length; i++) {
     }
 }
 
+//Hides all item popup forms until an individual item is edited
 for (let i = 0; i < closeButtons.length; i++) {
     editButtons[i].onclick = () => {
         previous.hidden = true;
@@ -19,12 +22,14 @@ for (let i = 0; i < closeButtons.length; i++) {
     }
 }
 
+//Hides the current item popup form
 for (let i = 0; i < closeButtons.length; i++) {
     closeButtons[i].onclick = () => {
         popupForms[i].hidden = true;
     }
 }
 
+//Search bar filter
 function filterFunction() {
     var input, filter, ul, li, b, i;
     div = document.getElementById("menu-list-box");
@@ -42,6 +47,7 @@ function filterFunction() {
     }
 }
 
+//Fetch API for the delete request
 let trashcan = document.getElementsByClassName('delete');
 for (let i = 0; i < trashcan.length; i++) {
     trashcan[i].addEventListener('click', (e) => {
@@ -65,8 +71,8 @@ for (let i = 0; i < trashcan.length; i++) {
     });
 }
 
+//Fetch API for the put request
 const forms = document.getElementsByClassName("edit-form");
-
 for (let i = 0; i < forms.length; i++) {
     forms[i].addEventListener("submit", (event) => {
         event.preventDefault();
@@ -80,6 +86,8 @@ for (let i = 0; i < forms.length; i++) {
             expDate: inputs[2].value,
             location: inputs[3].value
         }
+
+        //Manual URL encoding of the form data
         let urlEncodedData = "",
         urlEncodedDataPairs = [],
         name;
