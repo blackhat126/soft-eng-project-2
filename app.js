@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const Item = require('./models/item.js');
 
 //Enter the MongoDB connection string below
-const dbURI = '';
+const dbURI = 'mongodb+srv://blackhat:backup123hello@alert-app-cluster.3zgig.mongodb.net/alert-app-database?retryWrites=true&w=majority';
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTechnology: true})
    .then((result) => console.log('connected to db'))
    .catch((err) => console.log(err));
@@ -17,12 +17,12 @@ app.use(express.urlencoded({extended: true}));
 
 let password;
 
-app.get('/login', (req, res) => {
+app.get('/', (req, res) => {
     password = '';
     res.render('login-page');
 });
 
-app.get('/', (req, res) => {
+app.get('/changes', (req, res) => {
     if (password == 'Supervisor') {
         Item.find()
         .then((result) => {
@@ -88,7 +88,7 @@ app.post('/', (req, res) => {
 
         item.save()
         .then((result) => {
-            res.redirect('/');
+            res.redirect('/changes');
         })
         .catch((err) => {
             console.log(err);
@@ -102,7 +102,7 @@ app.put('/:id', (req, res) => {
     
     Item.findByIdAndUpdate(id, req.body)
     .then((result) => {
-        res.json({redirect: '/'});
+        res.json({redirect: '/changes'});
     })
     .catch((err) => {
          console.log(err);
@@ -114,7 +114,7 @@ app.delete('/:id', (req, res) => {
 
     Item.findByIdAndDelete(id)
     .then((result) => {
-        res.json({redirect: '/'});
+        res.json({redirect: '/changes'});
     })
     .catch((err) => {
         console.log(err);
