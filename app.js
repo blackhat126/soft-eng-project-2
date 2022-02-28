@@ -4,12 +4,12 @@ const mongoose = require('mongoose');
 const Item = require('./models/item.js');
 
 //Enter the MongoDB connection string below
-const dbURI = '';
+const dbURI = 'mongodb+srv://blackhat:backup123hello@alert-app-cluster.3zgig.mongodb.net/alert-app-database?retryWrites=true&w=majority';
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTechnology: true})
    .then((result) => console.log('connected to db'))
    .catch((err) => console.log(err));
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT);
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
