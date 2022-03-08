@@ -11,7 +11,7 @@ There are 3 employee levels where each one has a certain level of access to appl
 Click here for the live [demo](https://super-314528.oa.r.appspot.com/)
 
 ## Future Bug Fixes
-Depending on what size monitor you are viewing the project, some elements might be too close together or too far apart. It shouldn't interfere with the overall functionality of the application.
+Depending on what size monitor you are viewing the project, some elements might be too close together or too far apart, but shouldn't interfere with the overall functionality of the application.
 
 ## Tech Stack
 - EJS view engine
