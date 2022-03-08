@@ -14,7 +14,7 @@
     <div id="background-overlay"></div>
     <img id="background" src="cool blue background.svg"> 
     <div class="app-name-box"><div>Supermarket Food Alert App</div></div>
-    <a href="/"><button class="button logout-button">Log out</button></a>
+    <a href="/" class="logout-button-link"><button class="button logout-button">Log out</button></a>
     <div id="menu-box">
         <div id="menu-list-box" class="dropdown">
             <span class="search-icon"><i class="fas fa-search"></i></span><input id="search-bar" class="search-box form-inputs" data-toggle="dropdown" placeholder="Search..." onkeyup="filterFunction()">
@@ -25,7 +25,7 @@
                         <% menuItems.forEach((item) => { %>
                             <% if ((item.expDate.getFullYear() <= today.getFullYear()) && (item.expDate.getMonth() <= today.getMonth()) && (item.expDate.getDate() <= today.getDate())) { %> 
                                     <li>
-                                        <pre><i class="fas fa-exclamation-triangle icon"><div class="icon-box"></div></i><a style="color: black; cursor: pointer;"><b><%= item.productName %></b> <%= '(' + item.brandName + ')' %></a></br><button class="edit item-buttons" type="button">Edit</button> <button class="delete item-buttons" type="button" data-doc="<%= item._id %>">Delete</button></pre>                                                            
+                                        <pre><i class="fas fa-exclamation-triangle icon"><div class="icon-box"></div></i><a style="color: black; cursor: pointer;"><b><%= item.productName %></b> <%= '(' + item.brandName + ')' %></a></br><button class="edit item-buttons" type="button" disabled>Edit</button> <button class="delete item-buttons" type="button" data-doc="<%= item._id %>">Delete</button></pre>                                                            
                                     </li> 
                             <% } else { %> 
                                 <li>

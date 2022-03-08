@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const Item = require('./models/item.js');
 
 //Enter the MongoDB connection string below
-const dbURI = '';
+const dbURI = 'mongodb+srv://blackhat:backup123hello@alert-app-cluster.3zgig.mongodb.net/alert-app-database?retryWrites=true&w=majority';
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTechnology: true})
    .then((result) => console.log('connected to db'))
    .catch((err) => console.log(err));
@@ -12,6 +12,7 @@ mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTechnology: true})
 //Port configuration for Google Cloud Platform's App Engine service
 const PORT = process.env.PORT || 8080;
 app.listen(PORT);
+
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: true}));
