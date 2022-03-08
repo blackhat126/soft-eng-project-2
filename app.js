@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const Item = require('./models/item.js');
 
 //Enter the MongoDB connection string below
-const dbURI = '';
+const dbURI = 'mongodb+srv://blackhat:<password>@alert-app-cluster.3zgig.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTechnology: true})
    .then((result) => console.log('connected to db'))
    .catch((err) => console.log(err));
